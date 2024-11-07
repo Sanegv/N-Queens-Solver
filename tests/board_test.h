@@ -32,8 +32,6 @@ void testChangeQueenState(){
     int x = 5, y = 4;
     board *test = newBoard(testSize);
     changeQueenState(test, x, y);
-    printf("\n");
-    printQueens(*test);
     for(int i = 0; i < testSize; i++){
         for(int j = 0; j < testSize; j++){
             if(i != x || j != y)

@@ -84,9 +84,9 @@ void testCheckFiles(){
     assert(checkFiles(test) && "Board with one queen should be valid.");
     test->chessboard[0][7] = true;
     assert(checkFiles(test) && "Board with two separated queens should be valid.");
-    test->chessboard[3][5] = true;
+    test->chessboard[1][5] = true;
     assert(checkFiles(test) && "Board with two queens on the same rank should be valid.");
-    test->chessboard[5][5] = true;
+    test->chessboard[3][5] = true;
     assert(!checkFiles(test) && "Board with two queens on the same file should not be valid.");
 
     printf("Passed.\n");
@@ -102,7 +102,7 @@ void testCheckRanks(){
     assert(checkRanks(test) && "Board with one queen should be valid.");
     test->chessboard[7][0] = true;
     assert(checkRanks(test) && "Board with two separated queens should be valid.");
-    test->chessboard[5][3] = true;
+    test->chessboard[1][5] = true;
     assert(checkRanks(test) && "Board with two queens on the same file should be valid.");
     test->chessboard[5][5] = true;
     assert(!checkRanks(test) && "Board with two queens on the same rank should not be valid.");

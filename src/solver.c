@@ -20,8 +20,9 @@ bool solve(board *b, int x){
 }
 
 bool checkEmpty(board *b, int i, int j){
-    //TODO
-    return false;
+    if(b == NULL || i < 0 || j < 0 || b->N <= i || b->N <= j)
+        return false;
+    return !(b->chessboard[i][j]);
 }
 
 bool checkPlacement(board* b){
@@ -37,11 +38,33 @@ bool checkDiagonals(board *b){
 }
 
 bool checkRanks(board* b){
-    //TODO
-    return false;
+    if(b == NULL)
+        return false;
+    int count;
+    for(int i = 0; i < b->N; i++){
+        count = 0;
+        for(int j = 0; j < b->N; j++){
+            if(b->chessboard[j][i])
+                count++;
+        }
+        if(count > 1)
+            return false;
+    }
+    return true;
 }
 
 bool checkFiles(board* b){
-    //TODO
-    return false;
+    if(b == NULL)
+        return false;
+    int count;
+    for(int i = 0; i < b->N; i++){
+        count = 0;
+        for(int j = 0; j < b->N; j++){
+            if(b->chessboard[i][j])
+                count++;
+        }
+        if(count > 1)
+            return false;
+    }
+    return true;
 }

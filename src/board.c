@@ -44,7 +44,6 @@ int countQueens(board b){
             if(b.chessboard[i][j])
                 count++;
         }
-        printf("\n");
     }
     return count;
 }
