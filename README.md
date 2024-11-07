@@ -1,21 +1,13 @@
-# 8-Queens solver
+# N-Queens solver
 
 ## Goal
 
-The goal of this program is to solve the 8-queens problem. Note that it does not provide a solution for any other amount of queens.
+The goal of this program is to solve the N-queens problem. 
+It is a modified clone of [this repository](https://github.com/Sanegv/8-queens-solver), which solves for only 8-Queens (as opposed to any amount), but works using bitboards and bitwise operations.
 
-The goal here was to use three concepts:
-- bitwise operations;
+The goal here was to use two concepts:
 - backtracking;
 - Unit Testing (in C)
-
-### Bitwise operations
-
-Since we only use one type of chess piece (the Queen), and since a regular chessboard contains 64 tiles, the use of a bitboard was a great way to represent the state of the board while being memory efficient.
-
-A bitboard consists of a long (or long long, depending on your architecture) in which each bit represents a tile, and whether its empty or occupied.
-
-This forces the use of masks and shifts, two concepts that are essential to cryptography.
 
 ### Backtracking
 
@@ -29,15 +21,15 @@ This kind of algorithm is used to solve problems like exploring a labyrinth,find
 While not a brand-new concept, I wanted to force myself to do this project properly, and TDD (Test Driven Development) allowed me to gain a lot of time when trying an implementation.
 C unit testing is not as advanced as Java's JUnit or Go's Testing, but it is more than enough to create a working TDD environment.
 
-## 8-Queens problem
+## N-Queens problem
 
-The 8-Queens problem is a variant of the N-Queens problem, in which we must place N queens on an N*N grid, in such a way that no queen is threatened by another one.
+In the N-Queens problem, we must place N queens on an N*N grid, in such a way that no queen is threatened by another one.
 
 That means that no two queens can occupy the same file, row, or diagonal.
 We can see how similar this problem is to solving a sudoku grid.
 
 The implementation for N-Queens is similar to the one I used for 8-Queens.
-In fact, I'll probably just copy and paste the solve() function to a new project, but without limiting myself to using bitboards, and using 2D arrays to of size N*N.
+In fact, I just copyied and pasted the solve() function to a new project, but without limiting myself to using bitboards, and using 2D arrays to of size N*N.
 
 ## Files
 
