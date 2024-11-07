@@ -48,12 +48,12 @@ void testCheckEmpty(){
     printf("Running checkEmpty() tests... ");
 
     assert(false); //todo
-    assert(checkEmpty(&test, 0, 0) && "Empty tile should return true.");
-    assert(!checkEmpty(&test, 3, 2) && "Occupied tile should return false.");
-    assert(!checkEmpty(&test, -1, 2) && "x < 0 should return false.");
-    assert(!checkEmpty(&test, 1, -1) && "y < 0 should return false.");
-    assert(!checkEmpty(&test, 8, 2) && "x > 7 should return false.");
-    assert(!checkEmpty(&test, 1, 8) && "y > 7 should return false.");
+//    assert(checkEmpty(&test, 0, 0) && "Empty tile should return true.");
+//    assert(!checkEmpty(&test, 3, 2) && "Occupied tile should return false.");
+//    assert(!checkEmpty(&test, -1, 2) && "x < 0 should return false.");
+//    assert(!checkEmpty(&test, 1, -1) && "y < 0 should return false.");
+//    assert(!checkEmpty(&test, 8, 2) && "x > 7 should return false.");
+//    assert(!checkEmpty(&test, 1, 8) && "y > 7 should return false.");
 
     printf("Passed.\n");
 }

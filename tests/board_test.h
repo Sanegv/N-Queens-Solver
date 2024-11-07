@@ -17,7 +17,7 @@ void testNewBoard(){
     for(int i = 0; i < testSize; i++){
         assert(array[i] != NULL && "Chessboard row allocation failed.");
         for(int j = 0; j < testSize; j++)
-            assert(array[i][j] != false && "Chessboard file allocation failed.");
+            assert(array[i][j] == false && "Chessboard file allocation failed.");
         free(array[i]);
     }
 
@@ -32,9 +32,11 @@ void testChangeQueenState(){
     int x = 5, y = 4;
     board *test = newBoard(testSize);
     changeQueenState(test, x, y);
+    printf("\n");
+    printQueens(*test);
     for(int i = 0; i < testSize; i++){
         for(int j = 0; j < testSize; j++){
-            if(i != x && j != y)
+            if(i != x || j != y)
                 assert(test->chessboard[i][j] == false && "Board should be empty except for the right tile.");
             else
                 assert(test->chessboard[i][j] == true && "The right tile should be true.");
