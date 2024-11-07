@@ -49,8 +49,8 @@ void testChangeQueenState(){
         }
     }
 
-    freeBoard(test);
     printf("Passed.\n");
+    freeBoard(test);
 }
 
 void testCountQueens(){
@@ -65,6 +65,7 @@ void testCountQueens(){
     assert(countQueens(*test) == 2 && "Board should now contain 2 queens.");
 
     printf("Passed.\n");
+    freeBoard(test);
 }
 
 void allBoardTests(){
