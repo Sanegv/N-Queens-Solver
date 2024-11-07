@@ -10,7 +10,7 @@ typedef struct{
     bool **chessboard;
 } board;
 
-board* newBoard();
+board* newBoard(int N);
 
 bool changeQueenState(board* b, int x, int y);
 

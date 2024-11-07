@@ -1,6 +1,6 @@
 #include "board.h"
 
-board* newBoard(){
+board* newBoard(int N){
     //TODO
     return NULL;
 }
