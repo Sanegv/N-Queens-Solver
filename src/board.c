@@ -27,9 +27,12 @@ bool changeQueenState(board* b, int x, int y){
 }
 
 void printQueens(board b){
-    printf("  A B C D E F G H\n");
+    printf("  ");
+    for(int i = 0; i < b.N; i++)
+        printf(" %c", 'A' + i);
+    printf("\n");
     for(int i = 0; i < b.N; i++){
-        printf("%d ", i+1);
+        printf("%2d ", i+1);
         for(int j = 0; j < b.N; j++){
             printf((b.chessboard[i][j]) ? "D " : "# ");
         }
