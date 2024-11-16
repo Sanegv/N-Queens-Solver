@@ -32,9 +32,54 @@ bool checkPlacement(board* b){
     return checkDiagonals(b) && checkFiles(b) && checkRanks(b);
 }
 
+bool checkDiagonalEmpty(board *b, int x, int y){
+    int i = x+1, j = y+1;
+    while(i < b->N && j < b->N){
+        if(!checkEmpty(b, i, j))
+            return false;
+        i++;
+        j++;
+    }
+    i = x-1;
+    j = y-1;
+    while(i >= 0 && j >= 0){
+        if(!checkEmpty(b, i, j))
+            return false;
+        i--;
+        j--;
+    }
+    return true;
+}
+
+bool checkAntiDiagonalEmpty(board *b, int x, int y){
+    int i = x+1, j = y-1;
+    while(i < b->N && j >= 0){
+        if(!checkEmpty(b, i, j))
+            return false;
+        i++;
+        j--;
+    }
+    i = x-1;
+    j = y+1;
+    while(i >= 0 && j < b->N){
+        if(!checkEmpty(b, i, j))
+            return false;
+        i--;
+        j++;
+    }
+    return true;
+}
+
 bool checkDiagonals(board *b){
-    //TODO
-    return false;
+    for(int i = 0; i < b->N; i++){
+        for(int j = 0; j < b->N; j++){
+            if(checkEmpty(b, i, j))
+                continue;
+            if(!checkDiagonalEmpty(b, i, j) || !checkAntiDiagonalEmpty(b, i, j))
+                return false;
+        }
+    }
+    return true;
 }
 
 bool checkRanks(board* b){

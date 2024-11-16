@@ -30,8 +30,8 @@ void testCheckPlacement(){
     test->chessboard[7][0] = true;
     assert(checkPlacement(test) && "Board with two separated queens should be valid.");
     test->chessboard[7][0] = false;
-    assert(!checkPlacement(test) && "Board with two queens on the same rank should not be valid.");
     test->chessboard[5][2] = true;
+    assert(!checkPlacement(test) && "Board with two queens on the same rank should not be valid.");
     test->chessboard[5][2] = false;
     test->chessboard[1][5] = true;
     assert(!checkPlacement(test) && "Board with two queens on the same file should not be valid.");
